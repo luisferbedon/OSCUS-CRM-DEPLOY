@@ -1,0 +1,23 @@
+doctype html
+html
+    head
+        title= "CRM OSCUS"
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        script(src="https://code.jquery.com/jquery-2.2.3.min.js")
+        link(rel='stylesheet', href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css")
+        link(rel='stylesheet', href='http://fonts.googleapis.com/icon?family=Material+Icons')
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js")
+        if isAuthenticated
+            if user.tipo == 1
+                script(src="/javascripts/material_admin.js")
+        if !isAuthenticated
+            script(src="/javascripts/material_user.js")
+        script(src="/javascripts/typeahead/typeahead.bundle.min.js")
+        script(src="/javascripts/typeahead/bloodhound.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js")
+    body
+        include menu
+        block content
+        if isAuthenticated
+            if user.tipo == 1    
+                include footer.html

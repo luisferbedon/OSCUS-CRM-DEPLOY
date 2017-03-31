@@ -1,0 +1,23 @@
+#container1 {
+    float:left;
+    width:100%;
+}
+#col1, #col2, #col3, #col4 {
+    float:left;
+    width:25%;
+	height:600px;
+	overflow-y:scroll;
+	border:.5px solid #CCC;
+}
+.oculto {
+	display: none;	
+}
+.oculto:hover {
+	display: block;	
+}
+.ampliar:hover + .oculto{
+	display: block;
+}
+.drag{
+	
+}

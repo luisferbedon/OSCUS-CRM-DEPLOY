@@ -1,0 +1,15 @@
+extends ../templates/default
+
+block content
+    link(rel='stylesheet', href='/javascripts/fullcalendar/fullcalendar.min.css')
+    link(rel='stylesheet', href='/javascripts/fullcalendar/fullcalendar.print.min.css' media='print')
+    script(src="/javascripts/fullcalendar/moment.min.js")
+    script(src="/javascripts/fullcalendar/jquery-ui.min.js")
+    script(src="/javascripts/fullcalendar/fullcalendar.min.js")
+    div(class="col s4 offset-s4")
+        div()
+        h4= "Revisa tus tareas pendientes"
+        input(type="hidden" id="id" value = user.id)
+    div( id="calendar")
+    
+    script(src='/javascripts/calendario.js')

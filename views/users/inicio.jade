@@ -1,0 +1,20 @@
+
+link(rel='stylesheet', href='/stylesheets/style.css')
+link(rel='stylesheet', href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css")
+link(rel='stylesheet', href='http://fonts.googleapis.com/icon?family=Material+Icons')
+script(src="https://code.jquery.com/jquery-2.2.3.min.js") 
+script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js")
+script(src="/javascripts/material.js")
+link(href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+link(href="/stylesheets/inicio.css" rel="stylesheet")
+div( id='formulario' align="center")
+	div(class="container row")
+		br()
+		i(class="medium material-icons prefix")="account_circle"
+		h5= "Iniciar Sesión"
+		p= "Mira el estado comercial de tu empresa"
+		div(id="sesion" align="center")
+			form(action='/' method='post')
+				input(type="email" class="active" id="correo" placeholder="Correo Electrónico" name="username")
+				input(name="password" type="password" placeholder="tu contraseña")
+				button(type="submit" class="waves-effect waves-light btn")= "Ingresar"

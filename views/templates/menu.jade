@@ -1,0 +1,38 @@
+ul(id="dropdown1" class="dropdown-content")
+	if user.tipo==1  
+		li()
+			a(href="/nuevo-usuario")
+				i(class="medium material-icons right")= "person_pin"
+				= "Registrar Usuario"
+	li(class="divider")
+	if user.tipo==2  
+		li()
+			a(href="/tablero")
+				i(class="medium material-icons right")= "dashboard"
+				= "Tablero de peticiones"
+	li(class="divider")
+	li()
+		a(href="/calendario")
+			i(class="medium material-icons right")= "trending_up"
+			= "Mi Agenda"
+	li(class="divider")
+    
+	li()
+		a(href="/perfil")
+			i(class="medium material-icons right")= "contact_phone"
+			= "Mi Perfil"
+	li(class="divider")
+	li()
+		a(href="/salir")
+			i(class="medium material-icons right")= "contact_phone"
+			= "Salir"
+	li(class="divider")
+
+nav(class="blue darken-1")
+	div(class="nav-wrapper")
+		a(href="/" class="brand-logo")="  CRM WEB OSCUS"
+			i(class="large material-icons")="code"
+		ul(class="right hide-on-med-and-down")
+			li
+				a(class="dropdown-button" data-activates="dropdown1")="Menu Principal"
+					i(class="material-icons right")="toc"

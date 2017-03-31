@@ -1,0 +1,17 @@
+extends ../templates/default
+
+block content
+	script(src="https://code.highcharts.com/highcharts.js")
+	script(src="https://code.highcharts.com/modules/exporting.js")
+	script(src="https://code.highcharts.com/modules/funnel.js")
+	input(type="hidden" value=user.id_grupo id="id_grupo")
+	input(type="hidden" value=user.id id="id")
+	div(class='row center')
+		h4= "Bienvenido "+user.nombre
+		h6= "Este es el panel de Control"
+		p= "Oficina Operativa: "+ user.grupo
+		p="Tipo de Usuario "+ user.tipo
+		div(id="container"  )
+		div(id="container2" )
+	
+	script(src="/javascripts/estadistica_user.js")

@@ -1,0 +1,17 @@
+extends ../templates/default
+
+block content
+	div(class= "row center")
+        h3= 'Hola ' + user.nombre + ' mira la actual posición de tu auto '
+        p= "Oficina Operativa: "+ user.grupo
+		p= "Tipo de Usuario "+ user.tipo 
+		
+        div(class='row')
+            div(id='datos' class="col-md-12 col-sm-12")
+                input(type="hidden" value=9354869057466765 id="id_vehiculo")
+            div(class='col-md-8' id='mimapa')
+        link(rel="stylesheet", href="/stylesheets/mapa.css")
+        link(rel="stylesheet", href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css")
+        script(src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js")
+        script(src="/javascripts/mapa.js")
+        script(src="https://code.jquery.com/jquery-2.2.3.min.js")  

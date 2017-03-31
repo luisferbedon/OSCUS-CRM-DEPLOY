@@ -1,0 +1,371 @@
+<style >
+        @font-face {
+            font-family:"Prociono";
+            src: url("../font/Prociono-Regular-webfont.ttf");
+        }
+        .container {
+            margin: 0 auto;
+            max-width: 750px;
+            text-align: center;
+        }
+        .tt-dropdown-menu, .gist {
+            text-align: left;
+        }
+        html {
+            color: #333333;
+            font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 18px;
+            line-height: 1.2;
+        }
+        #scrollable-dropdown-menu .tt-dropdown-menu {
+              max-height: 150px;
+              overflow-y: auto;
+            }
+        .title, .example-name {
+            font-family: Prociono;
+        }
+        p {
+            margin: 0 0 10px;
+        }
+        .title {
+            font-size: 64px;
+            margin: 20px 0 0;
+        }
+        .example {
+            padding: 30px 0;
+        }
+        .example-name {
+            font-size: 32px;
+            margin: 20px 0;
+        }
+        .demo {
+            margin: 50px 0;
+            position: relative;
+        }
+        .typeahead, .tt-query, .tt-hint {
+            border: 2px solid #CCCCCC;
+            border-radius: 8px 8px 8px 8px;
+            font-size: 24px;
+            height: 30px;
+            line-height: 30px;
+            outline: medium none;
+            padding: 8px 12px;
+            width: 396px;
+        }
+        .typeahead {
+            background-color: #FFFFFF;
+        }
+        .typeahead:focus {
+            border: 2px solid #0097CF;
+        }
+        .tt-query {
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+        }
+        .tt-hint {
+            color: #999999;
+        }
+        .tt-dropdown-menu {
+            background-color: #FFFFFF;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 8px 8px 8px 8px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            margin-top: 12px;
+            padding: 8px 0;
+            width: 422px;
+        }
+        .tt-suggestion {
+            font-size: 18px;
+            line-height: 24px;
+            padding: 3px 20px;
+        }
+        .tt-suggestion.tt-cursor {
+            background-color: #0097CF;
+            color: #FFFFFF;
+        }
+        .tt-suggestion p {
+            margin: 0;
+        }
+        .gist {
+            font-size: 14px;
+        }
+        .example-twitter-oss .tt-suggestion {
+            padding: 8px 20px;
+        }
+        .example-twitter-oss .tt-suggestion + .tt-suggestion {
+            border-top: 1px solid #CCCCCC;
+        }
+        .example-twitter-oss .repo-language {
+            float: right;
+            font-style: italic;
+        }
+        .example-twitter-oss .repo-name {
+            font-weight: bold;
+        }
+        .example-twitter-oss .repo-description {
+            font-size: 14px;
+        }
+        .example-sports .league-name {
+            border-bottom: 1px solid #CCCCCC;
+            margin: 0 20px 5px;
+            padding: 3px 0;
+        }
+        .example-arabic .tt-dropdown-menu {
+            text-align: right;
+        }
+</style>
+
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large red">
+      <i class="large material-icons">library_add</i>
+    </a>
+    <ul>
+      <li><a href="#busqueda" class="btn-floating red"><i class="material-icons">my_location</i></a></li>    
+      <li><a href="#nuevo_dispositivo" class="btn-floating red"><i class="material-icons">settings_remote</i></a></li>
+      <li><a href="#modal" class="btn-floating  blue darken-4"><i class= "material-icons">perm_identity</i></a></li>
+    </ul>
+  </div>
+
+
+
+<div id="modal" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Nuevo Usuario</h4>
+      <p>ingresa los datos del nuevo, después agrega un vehículo a este usuario</p>
+         <div class="row">
+            <form class="col s12" action="/nuevo-usuario" method="post">
+              <div class="row">
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="icon_prefix" name="nombre" type="text" class="validate" required>
+                  <label for="icon_prefix">Nombre</label>
+                </div>
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">phone</i>
+                  <input name="telefono" id="icon_telephone" type="tel" class="validate" required>
+                  <label for="icon_telephone">Telefono</label>
+                </div>
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">email</i>
+                  <input type="email" name="email" id="icon_telephone" type="tel" class="validate" required>
+                  <label for="icon_telephone">Correo</label>
+                </div>
+
+                  <div class="input-field col s6">
+                  <i class="material-icons prefix">done</i>
+                  <input id="icon_telephone" name="ci" type="text" class="validate" required>
+                  <label for="icon_telephone">Cédula de Identidad</label>
+                </div>
+                  
+                   <div class="input-field col s12">
+                  <i class="material-icons prefix">location_on</i>
+                  <input id="icon_telephone" name="direccion" type="text" class="validate" required>
+                  <label for="icon_telephone">Dirección</label>
+                </div>
+                  
+                 <div class="input-field col s12" align="center">
+                   <h6>Datos del Contacto</h6>
+                </div>
+                  <!--Datos del COntacto -->
+                  
+                   <div class="input-field col s6">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="icon_prefix" name="nombre_c" type="text" class="validate" required>
+                  <label for="icon_prefix">Nombre</label>
+                </div>
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">phone</i>
+                  <input name="telef_c" id="icon_telephone" type="tel" class="validate" required>
+                  <label for="icon_telephone">Telefono</label>
+                </div>
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">supervisor_account</i>
+                  <input type="text" name="parentesco" id="icon_telephone" type="tel" class="validate" required>
+                  <label for="icon_telephone">Parentesco</label>
+                </div>
+
+             <div class="input-field col s6">
+                  <i class="material-icons prefix">done</i>
+                  <input id="icon_telephone" name="ci_c" type="text" class="validate" required>
+                  <label for="icon_telephone">Cédula de Identidad</label>
+                      
+                </div>
+                  
+                
+                
+               <div class="input-field col s12">
+                  <i class="material-icons prefix">verified_user</i>
+                  <input id="icon_telephone" name="password" type="text" class="validate" required>
+                  <label for="icon_telephone">Password</label>
+                  
+                </div>
+                  
+                  <div class="input-field col s12">
+                    <select name="tipo">
+                      <option value="0">Usuario</option>
+                      <option value="1">Administrador</option>
+                    </select>
+
+                </div>
+                
+                  
+                  
+              </div>
+           
+          </div>
+        
+    </div>
+    <div class="modal-footer">
+       <button class="btn waves-effect waves-light" type="submit">Registrar
+    <i class="material-icons right">send</i>
+  </button>    
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+         </form>
+    </div>
+  </div>
+
+<div id="nuevo_dispositivo" class="modal modal-fixed-footer">
+    <div class="nuevo_dispositivo-content">
+	<h4>Nuevo Dispositivo</h4>
+      <p>Agrega un dispositivo a un usuario registrado</p>
+        
+             <form action="/nuevo-dispositivo" method="post">
+                  <div class="row">
+              <div class="input-field col s12">
+                  <div id="scrollable-dropdown-menu" class="col s-12">
+                <input class="dueno" name="dueno" required></input>
+                    </div>
+                </div>
+             
+             
+				<div class="input-field col s4">
+                  <input id="icon_telephone" name="modulo" type="text" class="validate" required>
+                  <label for="icon_telephone">ID del Dipositivo</label>
+                </div>
+			 <div class="input-field col s4">
+                  <input id="icon_telephone" name="marca" type="text" class="validate" required>
+                  <label for="icon_telephone">Marca</label>
+                </div>
+			 <div class="input-field col s4">
+                  <input id="icon_telephone" name="modelo" type="text" class="validate" required>
+                  <label for="icon_telephone">Modelo</label>
+                </div>
+			 <div class="input-field col s4">
+                  <input id="icon_telephone" name="color" type="text" class="validate" required>
+                  <label for="icon_telephone">Color</label>
+                </div>
+			 
+			 <div class="input-field col s4">
+                  <input id="icon_telephone" name="placas" type="text" class="validate" required>
+                  <label for="icon_telephone">Placas</label>
+                </div>
+			 <div class="input-field col s4">
+                  <input id="icon_telephone" name="ano" type="text" class="validate" required>
+                  <label for="icon_telephone">Año</label>
+                </div>
+			 
+			 <div class="input-field col s4">
+                  <input id="icon_telephone" name="motor" type="text" class="validate" required>
+                  <label for="icon_telephone">Motor</label>
+                </div>
+			 
+			
+			 
+			 <div class="input-field col s4">
+                  <input id="datepicker" onclick='$(".datepicker").pickadate()'  name="f_instalacion" type="date" class="datepicker" required>
+               
+                </div>
+			 
+			 <div class="input-field col s4">
+                  <input id="icon_telephone" name="factura" type="text" class="validate" required>
+                  <label for="icon_telephone">Factura</label>
+                 <input type="hidden" name="vendedor"  >
+                </div>
+			 
+			 
+	
+	       </div>
+        </div>
+            <div class="nuevo_dispositivo-foter">
+                  <button class="btn waves-effect waves-light" type="submit">Registrar
+                      <i class="material-icons right">send</i>
+                    </button>    
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+                </form>
+                </div>
+
+        
+        </div>
+    
+<div id="busqueda" class="modal modal-fixed-footer">
+        <div class="busqueda-content">
+            <form action="/rastrear" method="POST">
+            <div class="row">
+            <h4>Nueva búsqueda por Usuario</h4>
+            <p>Ingresa el número de cédula del Usuario a rastrear</p>
+            <div class="col s12">
+            <div id="scrollable-dropdown-menu" class="col s-12">
+                <input class="typeahead" name="ci"></input>
+            </div>
+            </div>
+            
+        </div>
+        </div>
+        <div class="busqueda-foter">
+                  <button class="btn waves-effect waves-light" type="submit">Rastrear
+                      <i class="material-icons right">my_location</i>
+                    </button>    
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+                </form>
+        </div>
+    </div>
+
+
+<script type="application/javascript">
+
+        // Instantiate the Bloodhound suggestion engine
+        var cedula = new Bloodhound({
+            datumTokenizer: function (datum) {
+                return Bloodhound.tokenizers.whitespace(datum.value);
+            },
+            queryTokenizer: Bloodhound.tokenizers.whitespace,
+            remote: {
+                url: 'http://104.197.148.48/api/1.3/index.php/usuarios/%QUERY',
+                wildcard: '%QUERY',
+                filter: function (cedula) {
+                    console.log(cedula);
+                    // Map the remote source JSON array to a JavaScript object array
+                    return $.map(cedula, function (movie) {
+                        console.log(movie.ci);
+                        return {
+                            value: movie.ci,
+                            nombre: movie.nombre
+                        };
+                    });
+                }
+            },
+            limit: 10
+        });
+
+        // Initialize the Bloodhound suggestion engine
+        cedula.initialize();
+
+        // Instantiate the Typeahead UI
+        $('#scrollable-dropdown-menu .typeahead').typeahead(null, {
+            displayKey: 'value',
+            source: cedula.ttAdapter(),
+            templates: {
+                suggestion: Handlebars.compile("<p style='padding:6px'><b>{{value}}</b> -  {{nombre}} </p>"),
+                footer: Handlebars.compile("<b>Término de Búsqueda '{{query}}'</b>")
+            }
+        });
+
+        $('#scrollable-dropdown-menu .dueno').typeahead(null, {
+            displayKey: 'value',
+            source: cedula.ttAdapter(),
+            templates: {
+                suggestion: Handlebars.compile("<p style='padding:6px'><b>{{value}}</b> -  {{nombre}} </p>"),
+                footer: Handlebars.compile("<b>Término de Búsqueda '{{query}}'</b>")
+            }
+        });
+
+</script>

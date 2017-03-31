@@ -1,0 +1,19 @@
+html {
+  background-image: url("http://smartmanagement.ec/crm/fondocrm.jpg");
+
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  background-attachment: fixed;
+
+  background-size: cover;
+}
+#formulario {
+  position: absolute;
+  width: 300 px;
+  top: 30%; 
+  left: 10%;
+  background-color: white;
+  -webkit-border-radius: 5px 10px; 
+  -moz-border-radius: 5px 10px; 
+}
