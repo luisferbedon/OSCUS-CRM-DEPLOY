@@ -88,7 +88,7 @@ module.exports = {
 
     crm : function(req, res, next){
 		var user = req.user;
-		if(user.tipo==1)
+		if(user.tipo==2)
 			{
 				return res.render('users/crm', {
 			isAuthenticated : req.isAuthenticated(),
@@ -130,10 +130,11 @@ module.exports = {
                 db.query('INSERT INTO usuarios SET ?', user, function(err, rows, fields){
                     if(err) 
 						console.log(err);
-                });
-                req.flash('info', 'Se registró correctamente el nuevo usuario');
+					 req.flash('info', 'Se registró correctamente el nuevo usuario');
                    db.end();
-                return res.redirect('/', {message:req.flash('info')});   
+                return res.redirect('/');  
+                });
+                
             }
 		});
 		
