@@ -37,7 +37,7 @@ function obtener_datos(){
 				center: 'title',
 				right: 'month,agendaWeek,agendaDay,listWeek'
 			},
-			defaultDate: '2017-03-15',
+			
 			navLinks: true, // can click day/week names to navigate views
             lang: 'es',
 			editable: false,

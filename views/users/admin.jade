@@ -14,4 +14,7 @@ block content
 		div(id="container"  )
 		div(id="container2" )
 	
-	script(src="/javascripts/estadistica_user.js")
+	if(user.tipo == 1)
+		script(src="/javascripts/estadistica_admin.js")
+	else
+		script(src="/javascripts/estadistica_user.js")
